@@ -18,4 +18,5 @@ const db = getFirestore(app);
 const storage = getStorage(app);
 const auth = getAuth(app);
 
-export { app, db, storage, auth };
+// Export all instances as a default object
+export default { app, db, storage, auth };
