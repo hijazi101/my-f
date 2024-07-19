@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { getFirestore, collection, query, where, getDocs, doc, getDoc } from 'firebase/firestore';
+import { app, db } from '../firebaseconfig';  // Use named import
 import Nav from '../components/Nav';
-import { app } from '../firebaseconfig'; 
 import { useUser } from '@clerk/nextjs';
 
 const Orders = () => {
   const [userPosts, setUserPosts] = useState([]);
   const { isLoaded, user } = useUser();
-  const db = getFirestore(app);
 
   useEffect(() => {
     if (isLoaded && user) {
