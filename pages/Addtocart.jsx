@@ -1,15 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import { SignIn, useUser, RedirectToSignIn } from '@clerk/nextjs';
-import { app} from '../firebaseconfig';
-import { doc, getFirestore, setDoc } from 'firebase/firestore';
+import { doc, setDoc } from 'firebase/firestore';
+import { db } from '../firebaseconfig'; // Ensure correct import
 import Nav from '../components/Nav';
 
 const Addtocart = () => {
   const router = useRouter();
-  const { postId } = router.query; // Retrieve the postId from the query parameters
-  const { isLoaded, isSignedIn, user } = useUser(); // Use Clerk's useUser hook
-  const db = getFirestore(app);
+  const { postId } = router.query;
+  const { isLoaded, isSignedIn, user } = useUser();
   const [formData, setFormData] = useState({
     fullName: '',
     city: '',
@@ -61,7 +60,7 @@ const Addtocart = () => {
   };
 
   if (!isLoaded) {
-    return <div>Loading...</div>; // Optionally, show a loading state
+    return <div>Loading...</div>;
   }
 
   if (!isSignedIn) {
@@ -71,7 +70,6 @@ const Addtocart = () => {
   return (
     <>
       <Nav />
-      
       <section className="bg-white py-8 antialiased dark:bg-gray-900 md:py-16">
         <div className="mx-auto max-w-screen-xl px-4 2xl:px-0">
           <div className="mx-auto max-w-5xl">
