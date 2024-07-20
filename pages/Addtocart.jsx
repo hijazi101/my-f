@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import { SignIn, useUser, RedirectToSignIn } from '@clerk/nextjs';
-import app from '../firebaseconfig';
+import { app} from '../firebaseconfig';
 import { doc, getFirestore, setDoc } from 'firebase/firestore';
 import Nav from '../components/Nav';
 
