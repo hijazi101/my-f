@@ -22,5 +22,5 @@ const auth = getAuth(app);
 export { app, db, storage, auth };
 
 
-export default { app, db, storage, auth };
+
 
