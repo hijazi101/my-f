@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import { useUser } from '@clerk/nextjs';
 import { getFirestore, collection, getDocs, doc, deleteDoc, updateDoc, query, where } from 'firebase/firestore';
-import app from '../firebaseconfig';
+import { app} from '../firebaseconfig';
 import Nav from '../components/Nav';
 import Toast from '../components/Toast';
 
