@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useUser } from '@clerk/nextjs';
-import app from '../firebaseconfig';
+import { app} from '../firebaseconfig';
 import { doc, getFirestore, setDoc } from 'firebase/firestore';
 import { getDownloadURL, getStorage, ref, uploadBytes } from 'firebase/storage';
 import Nav from '../components/Nav';
