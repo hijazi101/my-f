@@ -5,7 +5,7 @@ import { app} from '../firebaseconfig';
 import { doc, getFirestore, setDoc } from 'firebase/firestore';
 import Nav from '../components/Nav';
 
-const AddToCart = () => {
+const Addtocart = () => {
   const router = useRouter();
   const { postId } = router.query; // Retrieve the postId from the query parameters
   const { isLoaded, isSignedIn, user } = useUser(); // Use Clerk's useUser hook
@@ -205,4 +205,4 @@ const AddToCart = () => {
   );
 };
 
-export default AddToCart;
+export default Addtocart;
