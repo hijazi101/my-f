@@ -1,18 +1,12 @@
 import "../styles/globals.css";
-import Nav from '../components/Nav'
-import Hero from "../components/Hero";
-import { ClerkProvider, SignInButton, SignedIn, SignedOut, UserButton } from '@clerk/nextjs'
+import { ClerkProvider } from '@clerk/nextjs';
 
-function app({ Component,  
-  pageProps: { session, ...pageProps } }) {
+function App({ Component, pageProps }) {
   return (
-    <div>
-         <ClerkProvider {...pageProps}>
-       
+    <ClerkProvider {...pageProps}>
       <Component {...pageProps} />
     </ClerkProvider>
-  </div>
-  )
+  );
 }
 
-export default app
+export default App;

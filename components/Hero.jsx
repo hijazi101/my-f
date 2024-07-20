@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import { useUser } from '@clerk/nextjs';
 import { getFirestore, collection, getDocs, query, orderBy, where, doc, deleteDoc } from 'firebase/firestore';
-import app from '../firebaseconfig';
+import {app} from '../firebaseconfig';
 
 const AddToCartButton = ({ postId }) => {
   const router = useRouter();
