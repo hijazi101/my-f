@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { getFirestore, collection, query, where, getDocs, doc, updateDoc, getDoc } from 'firebase/firestore';
 import { useUser, SignedIn, SignedOut, SignIn } from '@clerk/nextjs';
 import Nav from '../components/Nav';
-import app from '../firebaseconfig';
+import { app} from '../firebaseconfig';
 
 const Orderswehave = () => {
   const [undeliveredOrders, setUndeliveredOrders] = useState([]);
